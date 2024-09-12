@@ -1,9 +1,15 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.26)
 project(jenkinsexample)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(Catch2_DIR ${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-linux/share/catch2)
+
+message("CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
+message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
 set(CMAKE_CXX_STANDARD 11)
 
